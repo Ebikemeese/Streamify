@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/root/HomePage";
-import NotFoundPage from "./pages/root/NotFoundPage";
+import HomePage from "./pages/base/HomePage";
+import NotFoundPage from "./pages/base/NotFoundPage";
 import SignupPage from "./pages/auth/SignupPage";
 import LoginPage from "./pages/auth/LoginPage";
 import OnboardingPage from "./pages/auth/OnboardingPage";
@@ -10,10 +10,12 @@ import ChatPage from "./pages/chats/ChatPage";
 import { Toaster } from "react-hot-toast";
 import useAuthUser from "./hooks/useAuthUser.js";
 import PageLoader from "./components/PageLoader"
+import Layout from "./components/Layout"
+import { useThemeStore } from "./store/useThemeStore.js";
 
 const App = () => {
   const { isLoading, authUser } = useAuthUser();
-  // const { theme } = useThemeStore();
+  const { theme } = useThemeStore();
 
   const isAuthenticated = Boolean(authUser);
   const isOnboarded = authUser?.data?.isOnboarded === true;
@@ -22,7 +24,7 @@ const App = () => {
   if (isLoading) return <PageLoader />;
 
   return (
-    <div className="h-screen" >{/*data-theme={theme}*/}
+    <div className="h-screen" data-theme={theme}>
       <Routes>
       <Route path="*" element={<NotFoundPage />} />
 
@@ -30,9 +32,9 @@ const App = () => {
           path="/"
           element={
             isAuthenticated && isOnboarded ? (
-              // <Layout showSidebar={true}>
+              <Layout showSidebar={true}>
                 <HomePage />
-              //</Layout>
+              </Layout>
             ) : (
               <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />
             )
@@ -54,9 +56,9 @@ const App = () => {
           path="/notifications"
           element={
             isAuthenticated && isOnboarded ? (
-              //<Layout showSidebar={true}>
+              <Layout showSidebar={true}>
                 <NotificationsPage />
-              //</Layout>
+              </Layout>
             ) : (
               <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />
             )
@@ -77,9 +79,9 @@ const App = () => {
           path="/chat/:id"
           element={
             isAuthenticated && isOnboarded ? (
-              //<Layout showSidebar={false}>
+              <Layout showSidebar={false}>
                 <ChatPage />
-              //</Layout>
+              </Layout>
             ) : (
               <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />
             )
