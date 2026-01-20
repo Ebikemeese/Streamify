@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router";
 import useAuthUser from "../hooks/useAuthUser";
-import { BellIcon, LogOutIcon, ShipWheelIcon } from "lucide-react";
+import { BellIcon, LogOutIcon, ShipWheelIcon, HomeIcon, UsersIcon } from "lucide-react";
 import ThemeSelector from "./ThemeSelector";
 import useLogout from "../hooks/useLogout";
 
@@ -20,7 +20,7 @@ const Navbar = () => {
                         <div className="pl-5">
                         <Link to="/" className="flex items-center gap-2.5">
                             <ShipWheelIcon className="size-9 text-primary" />
-                            <span className="text-3xl font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary  tracking-wider">
+                            <span className="text-3xl hidden sm:flex font-bold font-mono bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary  tracking-wider">
                             Streamify
                             </span>
                         </Link>
@@ -28,10 +28,22 @@ const Navbar = () => {
                     )}
 
                     <div className="flex items-center gap-3 sm:gap-4 ml-auto">
+                        <Link to={"/"}>
+                            <button className="btn btn-ghost btn-circle">
+                                <HomeIcon className="h-6 w-6 text-base-content opacity-70" />
+                            </button>
+                        </Link>
+
+                        <Link to={"/friends"}>
+                            <button className="btn btn-ghost btn-circle">
+                                <UsersIcon className="h-6 w-6 text-base-content opacity-70" />
+                            </button>
+                        </Link>
+                        
                         <Link to={"/notifications"}>
-                        <button className="btn btn-ghost btn-circle">
-                            <BellIcon className="h-6 w-6 text-base-content opacity-70" />
-                        </button>
+                            <button className="btn btn-ghost btn-circle">
+                                <BellIcon className="h-6 w-6 text-base-content opacity-70" />
+                            </button>
                         </Link>
                     </div>
 

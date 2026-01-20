@@ -7,11 +7,13 @@ import OnboardingPage from "./pages/auth/OnboardingPage";
 import NotificationsPage from "./pages/chats/NotificationsPage";
 import CallPage from "./pages/chats/CallPage";
 import ChatPage from "./pages/chats/ChatPage";
+import FriendsPage from "./pages/chats/FriendsPage";
 import { Toaster } from "react-hot-toast";
 import useAuthUser from "./hooks/useAuthUser.js";
 import PageLoader from "./components/PageLoader"
 import Layout from "./components/Layout"
 import { useThemeStore } from "./store/useThemeStore.js";
+
 
 const App = () => {
   const { isLoading, authUser } = useAuthUser();
@@ -64,6 +66,20 @@ const App = () => {
             )
           }
         />
+
+        <Route
+          path="/friends"
+          element={
+            isAuthenticated && isOnboarded ? (
+              <Layout showSidebar={true}>
+                <FriendsPage />
+              </Layout>
+            ) : (
+              <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />
+            )
+          }
+        />
+
         <Route
           path="/call/:id"
           element={

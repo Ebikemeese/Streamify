@@ -63,7 +63,20 @@ export async function acceptFriendRequest(requestId) {
   return response.data;
 }
 
+export async function rejectFriendRequest(requestId) {
+  const response = await axiosInstance.put(`/users/friend-request/reject`, {
+    requestId: requestId
+  });
+  return response.data;
+}
+
 export async function getStreamToken() {
   const response = await axiosInstance.get("/chat/token");
-  return response.data;
+  // console.log("Api", response.data)
+  return response.data.data;
+}
+
+export async function getRejectedFriendRequests() {
+  const response = await axiosInstance.get("/users/friend-requests/rejected")
+  return response.data
 }
