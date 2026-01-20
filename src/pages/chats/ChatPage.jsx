@@ -88,7 +88,7 @@ const ChatPage = () => {
 
   const handleVideoCall = () => {
     if (channel) {
-      const callUrl = `${window.location.origin}/call/${channel.id}`;
+      const callUrl = `${window.location.origin}/Streamify/call/${channel.id}`;
 
       channel.sendMessage({
         text: `I've started a video call. Join me here: ${callUrl}`,

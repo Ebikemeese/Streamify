@@ -28,6 +28,7 @@ export default defineConfig({
 //     host: "0.0.0.0", // or a specific hostname
 //     allowedHosts: [
 //       "localhost",
+//       "shady-dallas-nonepochal.ngrok-free.dev",
 //       "mydomain.com",
 //       "sub.mydomain.com"
 //     ],

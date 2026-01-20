@@ -13,7 +13,9 @@ const queryClient = new QueryClient();
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/Streamify">
+    <BrowserRouter 
+    basename="/Streamify"
+    >
       <QueryClientProvider client={queryClient}>
         <App />
       </QueryClientProvider>
