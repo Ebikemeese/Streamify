@@ -14,8 +14,9 @@ const Layout = ({ children, showSidebar = false }) => {
           <main className="flex-1 overflow-y-auto">{children}</main>
 
         </div>
-        <WebsiteFooter />
+        
       </div>
+      <WebsiteFooter />
     </div>
   );
 };
