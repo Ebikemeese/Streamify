@@ -1,16 +1,34 @@
-# React + Vite
+# 🎬 Streamify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Streamify is a modern web application built with **React**, **Vite**, and **TailwindCSS**, designed for seamless video streaming, real-time chat, and interactive user experiences. It leverages **Stream.io SDKs** for video and chat functionality, and is deployed via **GitHub Pages**.
 
-Currently, two official plugins are available:
+🌐 Live Demo: [Streamify on GitHub Pages](https://ebikemeese.github.io/Streamify/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Video Streaming** powered by `@stream-io/video-react-sdk`
+- **Real-time Chat** with `stream-chat` and `stream-chat-react`
+- **Responsive UI** styled with `tailwindcss` and `daisyUI`
+- **State Management** using `zustand`
+- **Data Fetching & Caching** with `@tanstack/react-query`
+- **Notifications** via `react-hot-toast`
+- **Iconography** with `lucide-react` and `react-icons`
+- **Routing** handled by `react-router-dom`
+- **Deployment** automated with `gh-pages`
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Tech Stack
+
+- **Frontend Framework**: React + Vite
+- **Styling**: TailwindCSS, DaisyUI
+- **State Management**: Zustand
+- **Networking**: Axios
+- **Chat & Video**: Stream.io SDKs
+- **Tooling**: ESLint, React Hooks linting, Vite plugin for React
+
+---
+
+
