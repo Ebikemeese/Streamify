@@ -1,6 +1,6 @@
 # 🎬 Streamify
 
-Streamify is a modern web application built with **React**, **Vite**, and **TailwindCSS**, designed for seamless video streaming, real-time chat, and interactive user experiences. It leverages **Stream.io SDKs** for video and chat functionality, and is deployed via **GitHub Pages**.
+Streamify is a modern web application built with **React**, **Vite**, **Node**, and **TailwindCSS**, designed for seamless video streaming, real-time chat, and interactive user experiences. It leverages **Stream.io SDKs** for video and chat functionality, and is deployed via **GitHub Pages**.
 
 🌐 Live Demo: [Streamify on GitHub Pages](https://ebikemeese.github.io/Streamify/)
 
@@ -23,6 +23,7 @@ Streamify is a modern web application built with **React**, **Vite**, and **Tail
 ## 📦 Tech Stack
 
 - **Frontend Framework**: React + Vite
+- **Backend**: Node + Express + MongoDB
 - **Styling**: TailwindCSS, DaisyUI
 - **State Management**: Zustand
 - **Networking**: Axios
